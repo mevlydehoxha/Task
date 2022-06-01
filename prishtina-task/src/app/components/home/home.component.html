@@ -1,0 +1,45 @@
+<div class="banner1">
+    <img [src]="data.bannerImage" class="banner-image">
+    <div class="main-title">
+        <img [src]="data.logoSnS" class="title1">
+        <div class="x-icon">   
+            <div class="x"></div>
+        </div>
+        <img [src]="data.logoANTO" class="title2">
+    </div>
+</div>
+<div class="banner2">
+    <div class="text-container">
+        <h1>{{data.title}}</h1>
+        <p>{{data.content}}</p>
+    </div>
+    <div>
+        <img [src]="data.firstSectionImage2" class="first-section-image2">
+    </div>
+</div>
+<div class="banner3">
+    <img [src]="data.firstSectionImage1" class="first-section-image1">
+</div>
+<div class="banner4">
+    <div class="slider">
+        <div slickContainer #slickController="slick" [slickConfig]="config">
+            <ng-container *ngIf="slickController.initialize">
+                <img slickItem *ngFor="let slide of sliders" src="{{slide.image}}">
+            </ng-container>
+        </div>
+    </div>
+    <div class="slide-text">
+        <h1>{{data.slider.description}}</h1>
+        <div>
+            <img [src]="data.slider.leftArrow" (click)="slickController.prev()" class="prev">
+            <img [src]="data.slider.rightArrow" (click)="slickController.next()" class="next">
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="inner-footer">
+        <p>{{data.thirdSectionLeftContent}}</p>
+        <p>{{data.thirdSectionRightContent}}</p>
+    </div>
+    <p>{{data.footer}}</p>
+</div>
