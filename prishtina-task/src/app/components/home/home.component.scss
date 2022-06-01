@@ -141,17 +141,39 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    padding-right:max(200px, 20vw);
+    padding-right:max(290px, 29vw);
     .slider{
-        width:90%;
+        width:100%;
         position: relative;
         right: max(200px, 20vw);
+        img{
+            margin: 0 max(10px, 1vw);
+        }
+        .img-bottom{
+            display: flex;
+            align-items: center;
+            float: right;
+            position: relative;
+            right:max(20px, 2vw);
+            .border{
+                width: max(30px, 3vw);
+                height: max(1px,0.1vw);
+                background-color: rgba(#000, 0.1);
+                margin:0 max(9px, 0.9vw)
+            }
+            h3{
+                font-size: max(15px, 0.95vw);
+            }
+            p{
+                font-size: max(15px, 0.95vw);
+            }
+        }
     }
     .slide-text{
         width:100%;
         h1{
-            font-size: max(25px, 2.3vw);
-            width:max(230px, 23vw)
+            font-size: max(29px, 2.7vw);
+            width:max(250px, 25vw)
         }
         .prev, .next{
             width:max(25px ,2.5vw)
@@ -166,10 +188,14 @@
         justify-content: center;
         margin:0 auto;
         width:100%;
+        padding-right: 0;
         .slider{
             width:100%;
             right: auto !important;
             margin:0 auto;
+            img{
+                margin:0 0 !important
+            }
         }
         .slide-text{
             text-align: center;
@@ -194,7 +220,7 @@
     }
     p{
         text-align: center;
-        font-size: max(17px, 1.15vw);
+        font-size: max(17px, 1vw);
         width:80%;
         margin:max(30px, 3vw) auto ;
         font-weight: bold;

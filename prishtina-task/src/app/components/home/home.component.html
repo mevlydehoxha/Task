@@ -24,7 +24,17 @@
     <div class="slider">
         <div slickContainer #slickController="slick" [slickConfig]="config">
             <ng-container *ngIf="slickController.initialize">
-                <img slickItem *ngFor="let slide of sliders" src="{{slide.image}}">
+                <!-- <img slickItem *ngFor="let slide of sliders" src="{{slide.image}}">
+                <p slickItem *ngFor="let t of sliders"> {{t.title}}</p> -->
+                <div slickItem *ngFor="let slide of sliders">
+                    <img src="{{slide.image}}">
+                    <div class="img-bottom">
+                        <h3>{{slide.title}}</h3>
+                        <span class="border"></span>
+                        <p>{{slide.id}}</p>
+
+                    </div>
+                </div>
             </ng-container>
         </div>
     </div>

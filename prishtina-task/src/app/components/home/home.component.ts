@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Slick } from 'ngx-slickjs';
+import { api_path } from '../../contants';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +25,7 @@ export class HomeComponent implements OnInit {
     this.getData();
   }
   getData(){
-    this.http.get('http://prishtinatask.scoopandspoon.at/api/page.php').subscribe(res => {
+    this.http.get(api_path).subscribe(res => {
       this.data=res;
       this.sliders=this.data.slider.slides;
     })
