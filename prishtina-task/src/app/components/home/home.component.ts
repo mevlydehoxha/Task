@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Slick } from 'ngx-slickjs';
 import { api_path } from '../../contants';
+import { RootObject } from './home.models';
 
 @Component({
   selector: 'app-home',
@@ -16,8 +17,12 @@ export class HomeComponent implements OnInit {
     dots:false,
     autoplay:false,
   }
-  sliders:any=[];
-  data:any=[];
+
+  root={
+    slider:{
+      description:''
+    }
+  } as RootObject
 
   constructor(private http:HttpClient) { }
 
@@ -25,9 +30,8 @@ export class HomeComponent implements OnInit {
     this.getData();
   }
   getData(){
-    this.http.get(api_path).subscribe(res => {
-      this.data=res;
-      this.sliders=this.data.slider.slides;
+    this.http.get<RootObject>(api_path).subscribe(result => {
+      this.root=result;
     })
   }
 }
